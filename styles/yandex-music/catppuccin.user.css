@@ -115,16 +115,20 @@
       font-family: @header-font !important;
     }
 
+    .page-root,
+    .bar {
+      max-width: unset;
+    }
+    .centerblock-wrapper {
+      margin: 0;
+      width: max-content;
+      place-self: center;
+    }
+
+    body.deco-pane-body,
     .deco-pane,
     .deco-pane-back,
-    .deco-pane-secondary,
-    body .local.deco-pane,
-    body .local .deco-pane,
-    body .local.deco-pane-back,
-    body .local .deco-pane-back,
-    body .local.deco-pane-secondary,
-    body .local .deco-pane-secondary,
-    body.deco-pane-body {
+    .deco-pane-secondary {
       background-color: @base;
     }
     .head-container * {
@@ -146,19 +150,13 @@
         }
       }
     }
-    .deco-player-controls,
-    body .deco-player-controls,
-    body .deco-player-controls {
+    .deco-player-controls {
       background-color: @crust;
     }
-    .deco-border,
-    body .deco-border,
-    body .deco-border {
+    .deco-border {
       border-color: rgba(@subtext1, 0.05);
     }
-    .deco-pane.centerblock-wrapper,
-    body .deco-pane.centerblock-wrapper,
-    body .deco-pane.centerblock-wrapper {
+    .deco-pane.centerblock-wrapper {
       box-shadow: none;
     }
     .js-download-desktop-application .d-button-inner {
@@ -182,54 +180,21 @@
     .typo-header_bold,
     .typo-small,
     .typo-small_bold,
-    body .local.typo,
-    body .local .typo,
-    body .local.typo-h1,
-    body .local .typo-h1,
-    body .local.typo-h2,
-    body .local .typo-h2,
-    body .local.typo-h2_bold,
-    body .local .typo-h2_bold,
-    body .local.typo-h3,
-    body .local .typo-h3,
-    body .local.typo-h3_bold,
-    body .local .typo-h3_bold,
-    body .local.typo-h3_regular,
-    body .local .typo-h3_regular,
-    body .local.typo-header_bold,
-    body .local .typo-header_bold,
-    body .local.typo-small,
-    body .local .typo-small,
-    body .local.typo-small_bold,
-    body .local .typo-small_bold,
     .deco-pane,
     .deco-pane-back,
     .deco-pane-secondary,
-    body .local.deco-pane,
-    body .local .deco-pane,
-    body .local.deco-pane-back,
-    body .local .deco-pane-back,
-    body .local.deco-pane-secondary,
-    body .local .deco-pane-secondary,
     .typo-nav.current,
-    body .typo-nav.current,
-    body .typo-nav.current,
     .nav-kids .typo-nav_contrast,
     .head-kids__app .d-button__label,
     .typo-nav,
-    body .local.typo-nav,
-    body .local .typo-nav,
     .rup__content-button-caption,
     .rup-settings__button .d-button__label,
     .deco-link,
-    body .local.deco-link,
-    body .local .deco-link,
     .sidebar-rup-button,
     .sidebar-rup-section__title,
     .sidebar-rup-actions__reset-settings .d-button__label,
     .deco-typo,
-    body .local.deco-typo,
-    body .local .deco-typo .page-main__clips-title,
+    .deco-typo .page-main__clips-title,
     .d-select__text,
     .nav-kids .typo-nav.current {
       color: @text;
@@ -239,17 +204,7 @@
     .typo-disabled,
     .typo-header,
     .typo-secondary,
-    body .local.typo-caps,
-    body .local .typo-caps,
-    body .local.typo-disabled,
-    body .local .typo-disabled,
-    body .local.typo-header,
-    body .local .typo-header,
-    body .local.typo-secondary,
-    body .local .typo-secondary,
     .deco-typo-secondary,
-    body .local.deco-typo-secondary,
-    body .local .deco-typo-secondary,
     .page-line__description,
     .page-main__clips-artists {
       color: @overlay1;
@@ -261,14 +216,18 @@
     .rup-settings-context {
       border-color: @text;
     }
-    .rup-settings__button:hover .d-button-inner,
-    .sidebar-rup-actions__reset-settings:hover .d-button-inner {
-      border-color: @accent-color;
-      border-width: 2px;
-      padding: 19px 24px;
+    .rup-settings__button,
+    .sidebar-rup-actions__reset-settings {
+      &:hover .d-button-inner {
+        border-color: @accent-color;
+        border-width: 2px;
+        padding: 19px 24px;
+      }
     }
-    .rup-settings__button_short:hover .d-button-inner {
-      padding: 19px 14px !important;
+    .rup-settings__button_short {
+      &:hover .d-button-inner {
+        padding: 19px 14px !important;
+      }
     }
     .rup-settings-context:hover {
       border-color: @accent-color;
@@ -276,77 +235,49 @@
       padding: 7px 9px 7px 23px;
     }
     // end `настроить` button
-    // trecks choose
-    .deco-button-grouped.active .deco-button-stylable,
-    body .local.deco-button-grouped.active .deco-button-stylable,
-    body .local .deco-button-grouped.active .deco-button-stylable {
-      background-color: @accent-color;
+    // tracks choose
+    .deco-button-grouped.active {
+      &,
+      &:hover {
+        .deco-button-stylable {
+          background-color: @accent-color;
+        }
+      }
     }
-    .deco-button-group .d-button,
-    body .local.deco-button-group .d-button,
-    body .local .deco-button-group .d-button {
+    .deco-button-group .d-button {
       background-color: @surface0;
     }
-    .deco-button-action .deco-button-stylable,
-    .deco-button-caution .deco-button-stylable,
-    .deco-button-gray .deco-button-stylable,
-    .deco-button-rainbow .deco-button-stylable,
-    .deco-button-selector .deco-button-stylable,
-    .deco-button .deco-button-stylable,
-    body .local.deco-button-action .deco-button-stylable,
-    body .local .deco-button-action .deco-button-stylable,
-    body .local.deco-button-caution .deco-button-stylable,
-    body .local .deco-button-caution .deco-button-stylable,
-    body .local.deco-button-gray .deco-button-stylable,
-    body .local .deco-button-gray .deco-button-stylable,
-    body .local.deco-button-rainbow .deco-button-stylable,
-    body .local .deco-button-rainbow .deco-button-stylable,
-    body .local.deco-button-selector .deco-button-stylable,
-    body .local .deco-button-selector .deco-button-stylable,
-    body .local.deco-button .deco-button-stylable,
-    body .local .deco-button .deco-button-stylable {
-      color: @subtext0;
+    .deco-button-grouped.active,
+    .deco-button-action {
+      .deco-button-stylable {
+        color: @base;
+      }
     }
-    .deco-button-grouped.active .deco-button-stylable,
-    body .local.deco-button-grouped.active .deco-button-stylable,
-    body .local .deco-button-grouped.active .deco-button-stylable,
-    .deco-button-action .deco-button-stylable,
-    body .local.deco-button-action .deco-button-stylable,
-    body .local .deco-button-action .deco-button-stylable {
-      color: @base;
-    }
-    // end trecks choose
+    // end tracks choose
     // buttons general
-    .deco-button-action .deco-button-stylable,
-    .deco-button-caution .deco-button-stylable,
-    .deco-button-gray .deco-button-stylable,
-    .deco-button-rainbow .deco-button-stylable,
-    .deco-button-selector .deco-button-stylable,
-    .deco-button .deco-button-stylable,
-    body .local.deco-button-action .deco-button-stylable,
-    body .local .deco-button-action .deco-button-stylable,
-    body .local.deco-button-caution .deco-button-stylable,
-    body .local .deco-button-caution .deco-button-stylable,
-    body .local.deco-button-gray .deco-button-stylable,
-    body .local .deco-button-gray .deco-button-stylable,
-    body .local.deco-button-rainbow .deco-button-stylable,
-    body .local .deco-button-rainbow .deco-button-stylable,
-    body .local.deco-button-selector .deco-button-stylable,
-    body .local .deco-button-selector .deco-button-stylable,
-    body .local.deco-button .deco-button-stylable,
-    body .local .deco-button .deco-button-stylable {
-      border: none;
-      background-color: @mantle;
+    .deco-button-action,
+    .deco-button-caution,
+    .deco-button-gray,
+    .deco-button-rainbow,
+    .deco-button-selector,
+    .deco-button {
+      .deco-button-stylable {
+        color: @subtext0;
+        border: none;
+        background-color: @mantle;
+      }
     }
+
     .deco-button-stylable:has(.d-icon_heart),
     .deco-button-stylable:has(.d-icon_heart-full),
     .deco-button-stylable:has(.d-icon_share) {
       background: none !important;
     }
-    .deco-button-simple,
-    body .local.deco-button-simple,
-    body .local .deco-button-simple {
+    .deco-button-simple {
       border: none;
+    }
+    .deco-button:hover .deco-button-stylable {
+      color: @text;
     }
     div.d-track__info-column svg circle {
       &:nth-child(1) {
@@ -358,6 +289,12 @@
     }
     .page-users__button-clear:hover * {
       color: @red;
+    }
+    .page-users__title * {
+      background-color: inherit !important;
+    }
+    .deco-button-grouped .deco-button-stylable {
+      background: inherit;
     }
     // end buttons general
     // end text color
@@ -372,23 +309,20 @@
       background-image: none;
     }
     // borders
-    .nav-kids .typo-nav.current,
-    .typo-nav.current,
-    body .local.typo-nav.current,
-    body .local .typo-nav.current {
-      border-color: @accent-color;
+    .typo-nav.current {
+      border-color: @accent-color !important;
     }
     // text/link on hover
     .nav-kids .typo-nav:hover,
     .typo-nav:hover,
-    body .local.typo-nav:hover,
-    body .local .typo-nav:hover,
+    .local.typo-nav:hover,
+    .local .typo-nav:hover,
     .deco-link:hover,
-    body .local.deco-link:hover,
-    body .local .deco-link:hover,
+    .local.deco-link:hover,
+    .local .deco-link:hover,
     .deco-link-wrapper:hover .deco-link,
-    body .local.deco-link-wrapper:hover .deco-link,
-    body .local .deco-link-wrapper:hover .deco-link {
+    .local.deco-link-wrapper:hover .deco-link,
+    .local .deco-link-wrapper:hover .deco-link {
       color: @accent-color !important;
     }
     // card on hover
@@ -417,29 +351,20 @@
       }
     }
     // play
+    .button_action.button,
     .d-hover__actions .d-button-play__wrap button,
     .deco-button-action .deco-button-stylable,
-    body .local.deco-button-action .deco-button-stylable,
-    body .local .deco-button-action .deco-button-stylable,
-    .button_action.button {
+    .deco-button-action.hover .deco-button-stylable,
+    .deco-button-action:hover .deco-button-stylable {
       background: @accent-color;
+      color: @base;
     }
     // unable play
     .deco-yate-button_disabled,
     .deco-yate-button_disabled.active,
     .deco-yate-button_disabled.hover,
     .deco-yate-button_disabled:active,
-    .deco-yate-button_disabled:hover,
-    body .local.deco-yate-button_disabled,
-    body .local .deco-yate-button_disabled,
-    body .local.deco-yate-button_disabled.active,
-    body .local .deco-yate-button_disabled.active,
-    body .local.deco-yate-button_disabled.hover,
-    body .local .deco-yate-button_disabled.hover,
-    body .local.deco-yate-button_disabled:active,
-    body .local .deco-yate-button_disabled:active,
-    body .local.deco-yate-button_disabled:hover,
-    body .local .deco-yate-button_disabled:hover {
+    .deco-yate-button_disabled:hover {
       background: @red !important;
     }
     // other buttons
@@ -450,31 +375,23 @@
     .deco-button-hover:active,
     .deco-button-hover:disabled,
     .deco-button-hover:hover,
-    .deco-button-hover_disabled,
-    body .local.deco-button-hover,
-    body .local .deco-button-hover,
-    body .local.deco-button-hover.active,
-    body .local .deco-button-hover.active,
-    body .local.deco-button-hover.disabled,
-    body .local .deco-button-hover.disabled,
-    body .local.deco-button-hover.hover,
-    body .local .deco-button-hover.hover,
-    body .local.deco-button-hover:active,
-    body .local .deco-button-hover:active,
-    body .local.deco-button-hover:disabled,
-    body .local .deco-button-hover:disabled,
-    body .local.deco-button-hover:hover,
-    body .local .deco-button-hover:hover,
-    body .local.deco-button-hover_disabled,
-    body .local .deco-button-hover_disabled {
+    .deco-button-hover_disabled {
       background-color: rgba(@accent-color, 0.4);
+    }
+
+    .d-context-menu__opener,
+    .d-track__delete {
+      .d-button-inner {
+        background-color: @base;
+      }
     }
     // end card on hover
 
     // не для совершеннолетних
     .d-explicit-mark,
-    body .local .d-explicit-mark {
-      background-color: @mantle;
+    .local .d-explicit-mark {
+      // background-color: @mantle;
+      background-color: inherit;
     }
     .d-explicit-mark:after {
       color: @red;
@@ -483,8 +400,8 @@
 
     // loading
     .deco-shade,
-    body .local.deco-shade,
-    body .local .deco-shade {
+    .local.deco-shade,
+    .local .deco-shade {
       background: @base;
     }
     .loading_on {
@@ -495,28 +412,173 @@
     }
     // end loading
 
+    .popup {
+      box-shadow: none;
+      border: 0.15rem solid @crust;
+      border-radius: 1rem;
+      background-color: @mantle;
+      .d-context-menu__item:hover {
+        background-color: rgba(@overlay0, 0.1);
+      }
+      color: @text;
+    }
+
     .local.deco-link_arrow:after,
     .local .deco-link_arrow:after,
     .deco-link_arrow:after {
       display: none;
     }
-    .deco-text-overlay:after,
-    body .local.deco-text-overlay:after,
-    body .local .deco-text-overlay:after {
+    .deco-text-overlay:after {
       background-image: none;
     }
 
-    .deco-playlist-notification__point,
-    body .local.deco-playlist-notification__point,
-    body .local .deco-playlist-notification__point {
+    .deco-playlist-notification__point {
       color: @accent-color;
     }
     .audio-animation__fallback,
     .rup__animation {
       display: none;
     }
+    // recolor icons
+    .d-icon_loupe {
+      @svg: escape(
+        '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M19.5 19.2l-3.6-3.7v-.1c.9-1.2 1.5-2.7 1.5-4.3 0-3.9-3.1-7-7-7s-7 3.1-7 7 3.1 7 7 7c1.5 0 2.9-.5 4.1-1.3l.1.1 3.6 3.7.7.7 1.4-1.4-.8-.7zM5.4 11.1c0-2.8 2.2-5 5-5s5 2.2 5 5-2.2 5-5 5-5-2.3-5-5z" fill="@{text}"/></svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}");
+    }
+    @plus-color: @yellow;
+    .plus-logo__plus-icon {
+      @svg: escape(
+        '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="@{plus-color}"> <g clip-path="url(#clip0_2262_1552)"> <g clip-path="url(#clip1_2262_1552)"> <path fill-rule="evenodd" clip-rule="evenodd" d="M8.64001 12.8L10.2 8H16C16 10.1217 15.1572 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84342 15.1571 2.34313 13.6569C0.84284 12.1566 0 10.1217 0 8C0 5.87827 0.84284 3.84344 2.34313 2.34315C3.84342 0.842855 5.87827 1.42653e-10 8 1.42653e-10C8.83937 -5.00738e-06 9.67354 0.131824 10.472 0.390667L8.64935 6H3.32533L2.67467 8H8L6.44001 12.8H8.64001ZM10.8493 6L12.376 1.304C14.0455 2.39484 15.248 4.06939 15.748 6H10.8493Z"/> </g> </g> <defs> <clipPath id="clip0_2262_1552"> <rect width="16" height="16"/> </clipPath> <clipPath id="clip1_2262_1552"> <rect width="16" height="16"/> </clipPath> </defs> </svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}") !important;
+    }
+    .plus-points__text {
+      @svg: escape(
+        '<svg xmlns="http://www.w3.org/2000/svg" width="39" height="12" viewBox="0 0 39 12" fill="@{plus-color}"> <path d="M0 0H9.25997V11.8349H7.24622V1.73315H1.99725V11.8349H0V0Z"/> <path d="M11.7502 8.7978C11.8713 8.23659 11.9483 7.51032 11.9813 6.61898C12.0253 5.71664 12.0473 4.59972 12.0473 3.26822H18.2041V11.8349H16.2894V4.81981H13.797C13.775 5.95323 13.731 6.95461 13.6649 7.82393C13.5989 8.69326 13.4614 9.43054 13.2523 10.0358C13.0542 10.63 12.7626 11.0867 12.3775 11.4058C12.0033 11.7249 11.4971 11.8845 10.8589 11.8845C10.7708 11.8845 10.6828 11.879 10.5948 11.8679C10.5178 11.8679 10.4352 11.8624 10.3472 11.8514V10.0688C10.4572 10.0908 10.5398 10.1018 10.5948 10.1018C10.8919 10.1018 11.1285 9.99725 11.3045 9.78817C11.4916 9.56809 11.6402 9.23796 11.7502 8.7978Z"/> <path d="M31.0688 7.54333C31.0688 8.2586 30.9642 8.89133 30.7552 9.44154C30.5461 9.99175 30.2545 10.4594 29.8803 10.8446C29.5172 11.2187 29.0825 11.5048 28.5763 11.7029C28.0812 11.901 27.542 12 26.9587 12C26.4305 12 25.9354 11.9175 25.4732 11.7524C25.011 11.5873 24.6039 11.3453 24.2517 11.0261C23.8996 10.696 23.608 10.2999 23.3769 9.83769C23.1458 9.36451 22.9973 8.82531 22.9312 8.22008H21.7098V11.8349H19.795V3.26822H21.7098V6.6685H22.9642C23.0413 6.09629 23.1953 5.5901 23.4264 5.14993C23.6575 4.69876 23.9491 4.32462 24.3012 4.02751C24.6534 3.71939 25.055 3.48831 25.5062 3.33425C25.9574 3.18019 26.4415 3.10316 26.9587 3.10316C27.542 3.10316 28.0812 3.2022 28.5763 3.40027C29.0825 3.58735 29.5172 3.87345 29.8803 4.2586C30.2545 4.63274 30.5461 5.09491 30.7552 5.64512C30.9642 6.19532 31.0688 6.82806 31.0688 7.54333ZM26.9587 10.3989C27.575 10.3989 28.0867 10.1678 28.4938 9.70564C28.901 9.24347 29.1045 8.5227 29.1045 7.54333C29.1045 6.57497 28.901 5.8597 28.4938 5.39752C28.0867 4.92435 27.575 4.68776 26.9587 4.68776C26.3535 4.68776 25.8473 4.91884 25.4402 5.38102C25.044 5.84319 24.8459 6.56396 24.8459 7.54333C24.8459 8.5227 25.044 9.24347 25.4402 9.70564C25.8473 10.1678 26.3535 10.3989 26.9587 10.3989Z"/> <path d="M36.0578 12C35.3645 12 34.7428 11.901 34.1926 11.7029C33.6424 11.4938 33.1747 11.2022 32.7895 10.8281C32.4044 10.4429 32.1073 9.97524 31.8982 9.42503C31.6891 8.87483 31.5846 8.24759 31.5846 7.54333C31.5846 6.85007 31.6891 6.22834 31.8982 5.67813C32.1073 5.12792 32.4044 4.66575 32.7895 4.29161C33.1747 3.90646 33.6479 3.61485 34.2091 3.41678C34.7703 3.2077 35.3975 3.10316 36.0908 3.10316C36.685 3.10316 37.2022 3.16919 37.6424 3.30124C38.0935 3.43329 38.4512 3.59835 38.7153 3.79642V5.38102C38.3741 5.16093 38 4.99037 37.5928 4.86933C37.1967 4.74828 36.7345 4.68776 36.2063 4.68776C34.4347 4.68776 33.5488 5.63961 33.5488 7.54333C33.5488 9.44704 34.4182 10.3989 36.1568 10.3989C36.718 10.3989 37.1967 10.3384 37.5928 10.2173C38 10.0853 38.3741 9.92022 38.7153 9.72215V11.3067C38.4292 11.4938 38.0715 11.6589 37.6424 11.8019C37.2132 11.934 36.685 12 36.0578 12Z"/> </svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}");
+    }
+    .d-icon_play {
+      @svg: escape(
+        '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path fill="none" d="M0 0h24v24H0z"/><path d="M6.857 2.571L22.286 12 6.857 21.429V2.571z" fill="@{text}"/></svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}");
+    }
+    .d-icon_pause {
+      @svg: escape(
+        '<svg fill="@{text}" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path fill="none" d="M0 0h24v24H0z"/><path d="M5.143 3.429h5.143v17.142H5.143V3.429zm8.571 0h5.143v17.142h-5.143V3.429z"/></svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}");
+    }
+    .d-icon_circle-crossed_track {
+      @svg: escape(
+        '<svg fill="@{red}" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M17.606 7.808l-9.798 9.798a7 7 0 009.799-9.799zm-1.414-1.414a7 7 0 00-9.799 9.799l9.8-9.8zM12 21a9 9 0 110-18 9 9 0 010 18z" fill-rule="nonzero"/></svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}");
+    }
+    .d-icon_radio {
+      @svg: escape(
+        '<svg fill="@{text}" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill-rule="evenodd" d="M12 7.588c-2.444 0-4.444 2.012-4.444 4.47a4.39 4.39 0 002.333 3.913l1-1.9c-.667-.447-1.111-1.118-1.111-2.012 0-1.23 1-2.235 2.222-2.235a2.235 2.235 0 012.222 2.235c0 .894-.444 1.565-1.222 2.012l1 1.9c1.333-.783 2.333-2.236 2.333-3.912.111-2.459-1.889-4.47-4.333-4.47zM12 2C6.444 2 2 6.47 2 12.059c0 3.8 2.111 7.041 5.111 8.83l1-1.9c-2.333-1.342-3.889-3.913-3.889-6.93C4.222 7.7 7.778 4.235 12 4.235c4.222 0 7.778 3.577 7.778 7.824a7.995 7.995 0 01-4 6.93l1 1.9C19.888 19.1 22 15.858 22 12.058 22 6.47 17.556 2 12 2z"/></svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}");
+    }
+    .d-icon_plus-big {
+      @svg: escape(
+        '<svg fill="@{text}" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M11 11H4v2h7v7h2v-7h7v-2h-7V4h-2v7z"/></svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}");
+    }
+    .d-icon_share {
+      @svg: escape(
+        '<svg fill="@{text}" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><g fill-rule="evenodd"><path fill="none" d="M0 0h24v24H0z" opacity=".2"/><path d="M11 4.875L8 7.5l-1-1 5-5 5 5-1 1-3-2.625V13h-2V4.875zM20 18v2H4V10h2v8h12v-8h2v8z"/></g></svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}");
+    }
+    .d-icon_complain {
+      @svg: escape(
+        '<svg fill="@{red}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path fill-opacity=".9" d="M5 1c-.236 0-.573.105-.74.293C4.094 1.48 4 1.735 4 2v20c0 .265.094.52.26.707.167.188.504.293.74.293a.953.953 0 0 0 .68-.293c.167-.187.32-.442.32-.707v-7h13.11a.817.817 0 0 0 .474-.153.971.971 0 0 0 .328-.414 1.111 1.111 0 0 0-.107-1.058L16.694 9l3.111-4.375a1.111 1.111 0 0 0 .107-1.058.971.971 0 0 0-.328-.414.818.818 0 0 0-.473-.153H6V2c0-.265-.123-.52-.29-.707C5.543 1.105 5.236 1 5 1Zm12.261 4-2.4 3.375a1.081 1.081 0 0 0-.195.625c0 .227.069.448.195.625l2.4 3.375H6V5h11.261Z"/> </svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}");
+    }
+
+    .d-icon_heart.deco-buttonish-like-icon-pale,
+    .d-icon_heart {
+      @svg: escape(
+        '<svg stroke="@{text}" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="none" stroke-width="2" d="M12 19.587c-1.116-1.104-3.173-3.126-3.917-3.87l-.317-.317c-.912-.914-1.69-1.712-2.335-2.393-1.867-1.975-1.894-4.871-.16-6.695 1.668-1.756 4.341-1.748 6 .017l.729.775.729-.775c1.659-1.765 4.331-1.773 6-.017 1.734 1.824 1.707 4.72-.16 6.695-.644.681-1.424 1.478-2.335 2.393l-.316.316c-.738.737-2.8 2.765-3.918 3.871z"/></svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}");
+    }
+    .d-icon_heart.deco-buttonish-like-icon-bright {
+      @svg: escape(
+        '<svg stroke="@{accent-color}" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="none" stroke-width="2" d="M12 19.587c-1.116-1.104-3.173-3.126-3.917-3.87l-.317-.317c-.912-.914-1.69-1.712-2.335-2.393-1.867-1.975-1.894-4.871-.16-6.695 1.668-1.756 4.341-1.748 6 .017l.729.775.729-.775c1.659-1.765 4.331-1.773 6-.017 1.734 1.824 1.707 4.72-.16 6.695-.644.681-1.424 1.478-2.335 2.393l-.316.316c-.738.737-2.8 2.765-3.918 3.871z"/></svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}");
+    }
+    .d-icon_heart-full-colorless {
+      @svg: escape(
+        '<svg fill="@{text}" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill-rule="evenodd" d="M12 21c.71-.75 4.762-4.628 7.296-7.306 2.27-2.401 2.222-5.9.157-8.071-2.063-2.172-5.4-2.163-7.453.021-2.053-2.184-5.39-2.193-7.454-.021-2.064 2.17-2.11 5.67.158 8.071C7.237 16.372 11.29 20.25 12 21z"/></svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}");
+    }
+    .d-icon_heart-full {
+      @svg: escape(
+        '<svg fill="@{accent-color}" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill-rule="evenodd" d="M12 21c.71-.75 4.762-4.628 7.296-7.306 2.27-2.401 2.222-5.9.157-8.071-2.063-2.172-5.4-2.163-7.453.021-2.053-2.184-5.39-2.193-7.454-.021-2.064 2.17-2.11 5.67.158 8.071C7.237 16.372 11.29 20.25 12 21z"/></svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}");
+    }
+
+    .d-icon_cog {
+      @svg: escape(
+        '<svg fill="@{text}" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M10.028 12c0-1.097.903-2 2-2s2 .903 2 2-.903 2-2 2-2-.903-2-2zm6 0c0-2.194-1.806-4-4-4-2.195 0-4 1.806-4 4s1.805 4 4 4c2.194 0 4-1.806 4-4zm3.914 0c0-.144-.005-.287-.015-.438l1.503-1.13a1.454 1.454 0 00.383-1.864L19.95 5.432c-.344-.614-1.126-.882-1.794-.616l-1.803.704a7.695 7.695 0 00-.784-.448l-.263-1.836A1.475 1.475 0 0013.853 2h-3.7c-.713 0-1.329.506-1.449 1.21l-.268 1.862c-.264.13-.522.278-.783.448l-1.81-.706a1.464 1.464 0 00-1.8.64L2.205 8.546a1.438 1.438 0 00.362 1.88l1.512 1.136c-.019.285-.02.571-.001.856l-1.51 1.155a1.441 1.441 0 00-.358 1.89l1.846 3.105c.341.61 1.102.862 1.757.63l1.836-.724c.26.172.52.322.787.454l.264 1.836c.114.71.733 1.236 1.452 1.236h3.701c.712 0 1.328-.506 1.449-1.21l.268-1.866c.269-.134.528-.283.785-.45l1.804.711c.689.245 1.45-.008 1.803-.639l1.838-3.092c.365-.649.213-1.44-.361-1.88l-1.511-1.156c.01-.142.014-.28.014-.418zm-.115 2.859l-1.365 2.297-1.873-.74-.52-.205-.446.334a5.76 5.76 0 01-1.337.764l-.536.215L13.395 20H10.61l-.273-1.905-.083-.58-.547-.21a5.473 5.473 0 01-1.324-.76l-.447-.334-2.393.944-1.365-2.296 2.015-1.542-.073-.571A5.638 5.638 0 016.063 12c0-.219.019-.455.058-.78l.07-.573-2.011-1.51 1.366-2.294 1.874.734.51.199.443-.323c.475-.347.89-.585 1.334-.757l.547-.211L10.611 4h2.784l.273 1.905.084.58.546.21c.445.173.86.411 1.335.758l.442.323 2.387-.933 1.363 2.295-1.548 1.163-.462.346.07.573c.039.325.057.561.057.78 0 .218-.018.447-.056.746l-.074.571 2.015 1.542z" fill-rule="nonzero"/></svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}");
+    }
+    .d-icon_trash-wide {
+      @svg: escape(
+        '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" opacity=".2"/><path fill="@{red}" d="M3 5h18v2H3z"/><path stroke="@{red}" stroke-width="2" d="M6 6h12v15H6zm3-4h6v4H9z"/><path fill="@{red}" d="M9 9h2v9H9zm4 0h2v9h-2z"/></g></svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}");
+    }
+    // end recolor icons
   }
 }
+
+// FIXME: remove
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* prettier-ignore */
 @catppuccin: {
